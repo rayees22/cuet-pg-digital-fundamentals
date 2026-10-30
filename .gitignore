@@ -1,0 +1,36 @@
+# ==========================================
+# Large Video Media (>100MB Exceeds GitHub Limit)
+# ==========================================
+VIDEOS/
+*.mp4
+*.mkv
+*.avi
+*.mov
+
+# ==========================================
+# Dependencies & Package Managers
+# ==========================================
+node_modules/
+package-lock.json
+.npm/
+
+# ==========================================
+# Temporary Scratch & Test Scripts
+# ==========================================
+scripts/
+*.log
+
+# ==========================================
+# Operating System & IDE Artifacts
+# ==========================================
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# ==========================================
+# Environment Variables
+# ==========================================
+.env
+.env.local

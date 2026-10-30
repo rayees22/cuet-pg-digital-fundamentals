@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Fundamentals Interactive Platform - CUET PG / MCA</title>
+  <meta name="description" content="Production-ready interactive testing platform for CUET PG Computer Science (SCQP09) & MCA entrance exams. Features 220 high-yield MCQs across 12 digital logic units with step-by-step Hinglish solutions and exam traps.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="theme-dark">
+
+  <!-- ========================================== -->
+  <!-- TOP GLOBAL HEADER                          -->
+  <!-- ========================================== -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-group" id="header-brand">
+        <div class="brand-logo">DF</div>
+        <div class="brand-text">
+          <div class="brand-title">Digital Fundamentals Arena</div>
+          <div class="brand-subtitle">220 Advanced Exam-Level MCQs with Hinglish Solutions</div>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <!-- Palette Drawer Toggle -->
+        <button type="button" class="icon-btn" id="btn-palette-toggle" title="Open Question Palette (Drawer)" aria-label="Question Palette">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+        </button>
+
+        <!-- Sound Synthesizer Toggle -->
+        <button type="button" class="icon-btn" id="btn-sound-toggle" title="Toggle Sound Synthesizer" aria-label="Toggle Sound">
+          <svg id="icon-sound-on" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <svg id="icon-sound-off" class="hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button type="button" class="icon-btn" id="btn-theme-toggle" title="Toggle Theme (Dark / Light)" aria-label="Toggle Theme">
+          <svg id="icon-sun" class="hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg id="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- MAIN CONTAINER (3-SCREEN SYSTEM)           -->
+  <!-- ========================================== -->
+  <main class="app-main">
+
+    <!-- ---------------------------------------- -->
+    <!-- SCREEN 1: SETUP DASHBOARD                -->
+    <!-- ---------------------------------------- -->
+    <section id="screen-setup" class="screen-view active">
+      <div class="view-container">
+
+        <!-- Welcome Hero Banner -->
+        <div class="hero-banner">
+          <div class="hero-badge">CUET PG CS (SCQP09) / MCA / NIMCET 2026</div>
+          <h1 class="hero-title">Crack CUET PG Digital Fundamentals with 220 Exam-Level MCQs</h1>
+          <p class="hero-subtitle">
+            Comprehensive testing arena strictly modeled on the NTA examination framework. Featuring full-length Hinglish step-by-step conceptual dry runs, 2's complement arithmetic, K-Map quads/octets, MUX realizations, Flip-Flop excitation transitions, and ADC/DAC converters with dedicated ⚠️ Exam Trap alerts.
+          </p>
+
+          <div class="stat-pills-row">
+            <div class="stat-pill"><span class="pill-dot emerald"></span><strong>220</strong> Advanced MCQs</div>
+            <div class="stat-pill"><span class="pill-dot indigo"></span><strong>12</strong> Core DF Units</div>
+            <div class="stat-pill"><span class="pill-dot amber"></span><strong>Step-by-Step</strong> Hinglish Logic</div>
+            <div class="stat-pill"><span class="pill-dot cyan"></span><strong>Double</strong> Fisher-Yates Shuffle</div>
+          </div>
+        </div>
+
+        <!-- Resume Ongoing Session Banner (Appears dynamically) -->
+        <div id="resume-banner" class="resume-card hidden">
+          <div class="resume-left">
+            <div class="pulse-indicator"></div>
+            <div>
+              <div class="resume-title">Ongoing Quiz Session Detected</div>
+              <div class="resume-meta" id="resume-summary">Progress: 14 of 50 Answered • Score: 12 • Elapsed: 04:15</div>
+            </div>
+          </div>
+          <div class="resume-actions">
+            <button type="button" class="btn btn-secondary btn-sm" id="btn-discard-session">Discard</button>
+            <button type="button" class="btn btn-primary btn-sm" id="btn-resume-session">Resume My Quiz</button>
+          </div>
+        </div>
+
+        <!-- 2-Column Configuration Grid -->
+        <div class="config-grid">
+          
+          <!-- Left Column: Choose Topic / Module -->
+          <div class="card config-card">
+            <div class="card-header">
+              <h2 class="card-title">1. Choose Question Bank Topic</h2>
+              <span class="card-badge" id="topic-selected-badge">All 12 Units Selected</span>
+            </div>
+
+            <div class="topic-list" id="topic-selector-container">
+              <!-- All 12 Units Option (Default) -->
+              <label class="topic-item selected" data-section-id="0">
+                <input type="radio" name="quiz-topic" value="0" checked>
+                <div class="topic-info">
+                  <div class="topic-title">All 12 Digital Fundamentals Units</div>
+                  <div class="topic-desc">Complete syllabus practice with balanced question distribution across all topics</div>
+                </div>
+                <div class="topic-count-pill">220 MCQs</div>
+              </label>
+
+              <!-- Dynamic 12 Units list rendered by app.js -->
+            </div>
+          </div>
+
+          <!-- Right Column: Quiz Scope & Mode Selection -->
+          <div class="card config-card">
+            <div class="card-header">
+              <h2 class="card-title">2. Quiz Scope & Practice Mode</h2>
+              <span class="card-badge">Customizable</span>
+            </div>
+
+            <div class="scope-section">
+              <label class="scope-label">Number of Questions in Quiz:</label>
+              <div class="pill-selector-group" id="count-selector-group">
+                <button type="button" class="count-pill" data-count="10">10 MCQs</button>
+                <button type="button" class="count-pill" data-count="25">25 MCQs</button>
+                <button type="button" class="count-pill" data-count="50">50 MCQs</button>
+                <button type="button" class="count-pill" data-count="100">100 MCQs</button>
+                <button type="button" class="count-pill active" data-count="all">All Questions</button>
+              </div>
+            </div>
+
+            <!-- Features Checklist -->
+            <div class="checklist-card">
+              <div class="checklist-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span><strong>Instant Real-Time Evaluation:</strong> Immediate green/red visual response with audio chimes.</span>
+              </div>
+              <div class="checklist-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span><strong>Double Fisher-Yates Randomization:</strong> Zero position bias; option positions (A, B, C, D) are reshuffled dynamically.</span>
+              </div>
+              <div class="checklist-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span><strong>Zero-CORS & LocalStorage Auto-Save:</strong> Refreshing browser restores session state without losing progress.</span>
+              </div>
+              <div class="checklist-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span><strong>Full Keyboard Navigation:</strong> Press 1-4 or A-D to answer, N / Enter for Next, P for Prev, S for Skip.</span>
+              </div>
+            </div>
+
+            <!-- Start Action Button -->
+            <div class="start-action-box">
+              <button type="button" class="btn btn-primary btn-xl w-100" id="btn-start-quiz">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <span>Start New Randomized Quiz</span>
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ---------------------------------------- -->
+    <!-- SCREEN 2: DISTRACTION-FREE QUIZ ARENA    -->
+    <!-- ---------------------------------------- -->
+    <section id="screen-quiz" class="screen-view">
+      <div class="view-container arena-container">
+
+        <!-- Sticky Top Dashboard -->
+        <div class="arena-top-bar">
+          <div class="arena-bar-left">
+            <span class="arena-scope-pill" id="arena-scope-badge">All 12 Units</span>
+          </div>
+
+          <div class="arena-stats-group">
+            <div class="live-pill correct-pill" title="Correct Answers">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span id="arena-correct-count">0</span>
+            </div>
+            <div class="live-pill incorrect-pill" title="Incorrect Answers">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              <span id="arena-incorrect-count">0</span>
+            </div>
+            <div class="live-pill score-pill" title="Current Score">
+              <span>Score:</span>
+              <strong id="arena-score-display">0 / 220</strong>
+            </div>
+            <div class="live-pill timer-pill" title="Elapsed Time">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span id="arena-timer-display">00:00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Progress Tracker Bar -->
+        <div class="progress-wrap">
+          <div class="progress-text-row">
+            <span id="progress-status-text">Question 1 of 220</span>
+            <span id="progress-percentage-text">0% Completed</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="progress-bar-fill" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <!-- Main Question Card -->
+        <div class="question-card" id="question-card-container">
+          
+          <!-- Card Header Badges -->
+          <div class="q-header">
+            <div class="q-header-badges">
+              <span class="q-badge counter-badge" id="q-counter-badge">Q1 of 220</span>
+              <span class="q-badge bank-badge" id="q-bank-badge">Bank #1</span>
+              <span class="q-badge unit-badge" id="q-unit-badge">Unit 1: Number Systems</span>
+              <span class="q-badge diff-badge" id="q-diff-badge">Medium</span>
+            </div>
+
+            <!-- Bookmark / Flag Action -->
+            <button type="button" class="btn-bookmark" id="btn-bookmark-question" title="Flag / Bookmark this question (F)">
+              <svg id="icon-bookmark-empty" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+              <svg id="icon-bookmark-filled" class="hidden" width="18" height="18" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+              <span id="bookmark-label">Flag</span>
+            </button>
+          </div>
+
+          <!-- Question Statement -->
+          <div class="q-statement" id="q-statement-text">
+            Loading question...
+          </div>
+
+          <!-- 4 Options Container -->
+          <div class="options-grid" id="options-container">
+            <!-- 4 Option buttons rendered dynamically by app.js -->
+          </div>
+
+          <!-- Solution Box (Reveals immediately on selection) -->
+          <div class="solution-container hidden" id="solution-container">
+            <!-- Feedback Banner -->
+            <div class="feedback-banner" id="feedback-banner">
+              <div class="feedback-icon" id="feedback-icon">✓</div>
+              <div class="feedback-text" id="feedback-text">Correct Answer! (+1 point)</div>
+            </div>
+
+            <!-- Detailed Hinglish Explanation Box -->
+            <div class="explanation-box">
+              <div class="explanation-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span>Step-by-Step Hinglish Solution & Logic Derivation</span>
+              </div>
+              <div class="explanation-content" id="explanation-content-text">
+                Explanation text...
+              </div>
+            </div>
+
+            <!-- Dedicated Exam Trap Callout Box -->
+            <div class="trap-box" id="trap-box-container">
+              <div class="trap-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                <span>CUET PG Exam Trap & Shortcut Alert</span>
+              </div>
+              <div class="trap-content" id="trap-content-text">
+                Common mistake note...
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom Navigation Toolbar -->
+        <div class="arena-bottom-bar">
+          <div class="toolbar-left">
+            <button type="button" class="btn btn-secondary" id="btn-prev-question" disabled>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              <span>Previous</span>
+            </button>
+            <button type="button" class="btn btn-ghost" id="btn-skip-question">
+              <span>Skip (S)</span>
+            </button>
+          </div>
+
+          <div class="toolbar-right">
+            <button type="button" class="btn btn-danger-outline" id="btn-restart-quiz" title="Restart Quiz Session">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+              <span>Restart</span>
+            </button>
+            <button type="button" class="btn btn-primary" id="btn-next-question">
+              <span id="next-button-label">Next Question</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ---------------------------------------- -->
+    <!-- SCREEN 3: RESULTS & IN-DEPTH REVIEW      -->
+    <!-- ---------------------------------------- -->
+    <section id="screen-results" class="screen-view">
+      <div class="view-container">
+
+        <!-- Results Hero Score Card -->
+        <div class="results-hero-card">
+          <div class="results-hero-left">
+            <div class="score-circle-wrapper">
+              <svg class="score-circle-svg" width="140" height="140" viewBox="0 0 140 140">
+                <circle class="score-circle-bg" cx="70" cy="70" r="58"></circle>
+                <circle class="score-circle-progress" id="score-circle-bar" cx="70" cy="70" r="58"></circle>
+              </svg>
+              <div class="score-circle-inner">
+                <div class="score-big" id="result-score-big">0</div>
+                <div class="score-total" id="result-score-total">/ 220</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="results-hero-content">
+            <div class="tier-pill" id="result-tier-badge">Top Ranker (90%+ Ready)</div>
+            <h1 class="results-heading" id="result-heading-text">Quiz Session Completed!</h1>
+            <p class="results-comment" id="result-comment-text">
+              Outstanding conceptual mastery! You are well prepared for top ranks in CUET PG Computer Science.
+            </p>
+
+            <div class="cuet-marks-badge">
+              <span>CUET PG Net Marks (+4 / -1):</span>
+              <strong id="result-net-marks">+720 / 880 Marks</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 Stat Metric Cards -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-label">Attempted</div>
+            <div class="metric-value text-indigo" id="metric-attempted">0 / 0</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Correct (+1)</div>
+            <div class="metric-value text-emerald" id="metric-correct">0</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Incorrect (0)</div>
+            <div class="metric-value text-rose" id="metric-incorrect">0</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Skipped</div>
+            <div class="metric-value text-muted" id="metric-skipped">0</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Accuracy Rate</div>
+            <div class="metric-value text-cyan" id="metric-accuracy">0%</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Total Time</div>
+            <div class="metric-value text-amber" id="metric-time">00:00</div>
+          </div>
+        </div>
+
+        <!-- Results Primary Action Toolbar -->
+        <div class="results-action-row">
+          <button type="button" class="btn btn-secondary" id="btn-action-review-mistakes">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+            <span>Review Mistakes</span>
+          </button>
+          <button type="button" class="btn btn-amber" id="btn-action-retake-missed">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6"></path><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+            <span>Retake Missed Questions Only</span>
+          </button>
+          <button type="button" class="btn btn-secondary" id="btn-action-restart-this">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+            <span>Restart This Quiz</span>
+          </button>
+          <button type="button" class="btn btn-primary" id="btn-action-new-quiz">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            <span>Start New Random Quiz</span>
+          </button>
+        </div>
+
+        <!-- Section-Wise Syllabus Breakdown Card -->
+        <div class="card syllabus-breakdown-card">
+          <div class="card-header">
+            <h2 class="card-title">Syllabus Performance Breakdown (12 Units)</h2>
+            <span class="card-badge">Unit Mastery</span>
+          </div>
+
+          <div class="unit-breakdown-list" id="unit-breakdown-container">
+            <!-- Dynamic Unit Bars rendered by app.js -->
+          </div>
+        </div>
+
+        <!-- In-Depth Review Section -->
+        <div class="card review-section-card">
+          <div class="card-header review-header-row">
+            <div>
+              <h2 class="card-title">In-Depth Question Review & Concept Solutions</h2>
+              <p class="card-subtext">Click any question to view student answer vs correct answer and the complete numerical dry run.</p>
+            </div>
+
+            <!-- Review Filter Pills -->
+            <div class="review-filters">
+              <button type="button" class="filter-pill active" data-filter="all" id="filter-all">All (0)</button>
+              <button type="button" class="filter-pill text-rose" data-filter="mistakes" id="filter-mistakes">Mistakes (0)</button>
+              <button type="button" class="filter-pill text-muted" data-filter="skipped" id="filter-skipped">Skipped (0)</button>
+              <button type="button" class="filter-pill text-emerald" data-filter="correct" id="filter-correct">Correct (0)</button>
+            </div>
+          </div>
+
+          <div class="review-items-container" id="review-items-container">
+            <!-- Review cards rendered by app.js -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- SLIDE-OUT QUESTION PALETTE DRAWER          -->
+  <!-- ========================================== -->
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+  <aside class="palette-drawer" id="palette-drawer">
+    <div class="drawer-header">
+      <div class="drawer-title-group">
+        <h3 class="drawer-title">Question Palette</h3>
+        <span class="drawer-count-badge" id="drawer-count-badge">220 Questions</span>
+      </div>
+      <button type="button" class="icon-btn" id="btn-close-drawer" aria-label="Close Drawer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <!-- Palette Legend -->
+    <div class="drawer-legend">
+      <div class="legend-item"><span class="legend-dot dot-correct"></span> Correct</div>
+      <div class="legend-item"><span class="legend-dot dot-incorrect"></span> Incorrect</div>
+      <div class="legend-item"><span class="legend-dot dot-flagged"></span> Flagged</div>
+      <div class="legend-item"><span class="legend-dot dot-unanswered"></span> Unanswered</div>
+      <div class="legend-item"><span class="legend-dot dot-current"></span> Current</div>
+    </div>
+
+    <!-- Numbered Chips Grid -->
+    <div class="chips-grid" id="palette-chips-grid">
+      <!-- 220 chips rendered dynamically -->
+    </div>
+  </aside>
+
+  <!-- ========================================== -->
+  <!-- RESTART CONFIRMATION MODAL                 -->
+  <!-- ========================================== -->
+  <div class="modal-backdrop hidden" id="modal-restart">
+    <div class="modal-box">
+      <h3 class="modal-title">Restart Current Quiz?</h3>
+      <p class="modal-desc">
+        Are you sure you want to restart? Your active answers and timer for this session will be reset.
+      </p>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-secondary" id="btn-modal-cancel">Cancel</button>
+        <button type="button" class="btn btn-danger" id="btn-modal-confirm-restart">Yes, Restart Quiz</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Zero-CORS Script Loading Hierarchy -->
+  <script src="data/questions.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/quiz-engine.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

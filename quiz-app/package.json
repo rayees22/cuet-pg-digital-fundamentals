@@ -1,0 +1,17 @@
+{
+  "name": "cuet-pg-digital-fundamentals-quiz",
+  "version": "1.0.0",
+  "description": "CUET PG Digital Fundamentals Interactive Quiz Web Platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "cuet-pg",
+    "digital-fundamentals",
+    "quiz"
+  ],
+  "author": "",
+  "license": "ISC"
+}
